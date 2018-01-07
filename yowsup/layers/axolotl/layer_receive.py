@@ -26,6 +26,9 @@ from axolotl.protocol.senderkeydistributionmessage import SenderKeyDistributionM
 import binascii
 import logging
 import copy
+
+from axolotl.ecc.curve import Curve
+
 import sys
 logger = logging.getLogger(__name__)
 
@@ -400,6 +403,10 @@ class AxolotlReceivelayer(AxolotlBaseLayer):
             groupCipher = GroupCipher(self.store, senderKeyName)
             self.groupCiphers[senderKeyName] = groupCipher
         return groupCipher
+    
+    ##tambahan
+    def onSentKeysError():
+        logger.error("Error SendKeys")
 
 
     ### keys set and get
